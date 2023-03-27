@@ -33,7 +33,7 @@ jobs:
         with:
           filename: img/habits.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          user: AdamEECS
+          user: ElfenSterben
           template: classic
           base: ""
           config_timezone: Asia/Shanghai
