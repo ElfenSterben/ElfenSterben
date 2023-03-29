@@ -51,7 +51,7 @@ jobs:
           plugin_habits_trim: no
           plugin_languages: yes
           plugin_languages_indepth: yes
-          commits_authoring: es, ElfenSterben, 362051950@qq.com
+          commits_authoring: es, ES, ElfenSterben, 362051950@qq.com
           plugin_languages_skipped: ElfenSterben/sc, ElfenSterben/uploads
           plugin_languages_analysis_timeout: 15
           plugin_languages_analysis_timeout_repositories: 7.5
