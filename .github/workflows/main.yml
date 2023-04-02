@@ -53,15 +53,15 @@ jobs:
           plugin_languages_indepth: yes
           commits_authoring: es, ES, ElfenSterben, 362051950@qq.com, ElfenS
 #           plugin_languages_skipped: ElfenSterben/sc, ElfenSterben/uploads
-          plugin_languages_analysis_timeout: 15
-          plugin_languages_analysis_timeout_repositories: 7.5
+          plugin_languages_analysis_timeout: 30
+          plugin_languages_analysis_timeout_repositories: 15
 #           plugin_languages_categories: markup, programming
           plugin_languages_colors: github
           plugin_languages_details: bytes-size, percentage
           plugin_languages_ignored: html, css
           plugin_languages_limit: 8
 #           plugin_languages_recent_categories: markup, programming
-          plugin_languages_indepth_custom: Zibo-Commune/hill-be.git
+          plugin_languages_indepth_custom: Zibo-Commune/hill-be
 
           plugin_languages_recent_days: 14
           plugin_languages_recent_load: 300
