@@ -13,7 +13,7 @@ jobs:
       contents: write
     steps:
       - name: general
-        uses: ElfenSterben/metrics@master
+        uses: lowlighter/metrics@master
         with:
           filename: img/general.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -29,7 +29,7 @@ jobs:
           plugin_isocalendar_duration: half-year
           
       - name: habits
-        uses: ElfenSterben/metrics@master
+        uses: lowlighter/metrics@master
         with:
           filename: img/habits.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -69,7 +69,7 @@ jobs:
           plugin_languages_threshold: 0%
           
       - name: achievements
-        uses: ElfenSterben/metrics@master
+        uses: lowlighter/metrics@master
         with:
           filename: img/achievements.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -82,7 +82,7 @@ jobs:
           plugin_achievements_threshold: B
           
       - name: achievements-compact
-        uses: ElfenSterben/metrics@master
+        uses: lowlighter/metrics@master
         with:
           filename: img/achievements-compact.svg
           token: ${{ secrets.METRICS_TOKEN }}
