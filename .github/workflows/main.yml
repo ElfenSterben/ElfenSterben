@@ -68,8 +68,26 @@ jobs:
           plugin_languages_sections: most-used, recently-used
           plugin_languages_threshold: 0%
           
+      # 成就插件兼容新版 Projects，沿用官方预构建镜像和其他统计功能。
+      - name: 获取官方成就 Action
+        uses: actions/checkout@v4
+        with:
+          repository: lowlighter/metrics
+          ref: 366f8b9dfe3a59656c67d5dcad9950f59c9bc96d
+          path: .metrics-action
+          persist-credentials: false
+
+      - name: 修复成就插件 Projects 查询
+        shell: bash
+        run: |
+          cat > .metrics-action/Dockerfile <<'DOCKERFILE'
+          FROM ghcr.io/lowlighter/metrics:v3.35-beta
+          RUN sed -i 's/projects(first:/projects: projectsV2(first:/' /metrics/source/plugins/achievements/queries/achievements.graphql \
+            && grep -q 'projects: projectsV2(first:' /metrics/source/plugins/achievements/queries/achievements.graphql
+          DOCKERFILE
+
       - name: achievements
-        uses: lowlighter/metrics@master
+        uses: ./.metrics-action
         with:
           filename: img/achievements.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -82,7 +100,7 @@ jobs:
           plugin_achievements_threshold: B
           
       - name: achievements-compact
-        uses: lowlighter/metrics@master
+        uses: ./.metrics-action
         with:
           filename: img/achievements-compact.svg
           token: ${{ secrets.METRICS_TOKEN }}
